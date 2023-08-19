@@ -1,0 +1,13 @@
+create database test;
+use test;
+create table t(a char(100), b int);
+create table tt(x int, y char(100));
+insert into t(a, b) values("GP", 1);
+insert into t(a, b) values("RX", 2);
+insert into t(a, b) values("A3", 3);
+insert into tt(x, y) values(1, "GoldenPigron");
+insert into tt(x, y) values(2, "ReverierXu");
+insert into tt(x, y) values(3, "Arttnba3");
+delete from tt where x=2;
+update tt set x=2 where x=3;
+SELECT t.a, tt.y FROM t, tt WHERE t.b = 1 and tt.x = 1 or t.b = 2 and tt.x = 2 or t.b = 3 and tt.x = 3;
